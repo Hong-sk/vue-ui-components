@@ -3,7 +3,18 @@
 		<div class="toggle" @click="menuOpen">
 			<ion-icon :icon="shareSocial"></ion-icon>
 		</div>
-		<li style="--i: 0; --clr: #f70000">
+
+		<li
+			v-for="value in valueArr"
+			:key="value.id"
+			style="{--i: 'value.id', --clr: 'value.color'}"
+		>
+			<a href="#">
+				<ion-icon :icon="value.logo"></ion-icon>
+			</a>
+		</li>
+
+		<!-- <li style="--i: 0; --clr: #f70000">
 			<a href="#">
 				<ion-icon :icon="logoYoutube"></ion-icon>
 			</a>
@@ -28,12 +39,13 @@
 		</li>
 		<li style="--i: 7; --clr: #000000">
 			<a href="#"> <ion-icon :icon="logoGithub"></ion-icon></a>
-		</li>
+		</li> -->
 	</div>
 </template>
 
 <script>
 import { IonIcon } from '@ionic/vue';
+// import SubMenu from './SubMenu.vue';
 import {
 	shareSocial,
 	logoFacebook,
@@ -45,7 +57,7 @@ import {
 	logoAndroid,
 	logoPinterest,
 } from 'ionicons/icons';
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 export default {
 	components: { IonIcon },
@@ -54,8 +66,51 @@ export default {
 		const menuOpen = () => {
 			menuOpenBool.value = !menuOpenBool.value;
 		};
+		const valueArr = reactive([
+			{
+				id: 0,
+				color: '#f70000',
+				logo: logoYoutube,
+			},
+			{
+				id: 1,
+				color: '#e71a21',
+				logo: logoPinterest,
+			},
+			{
+				id: 2,
+				color: '#3bd580',
+				logo: logoAndroid,
+			},
+			{
+				id: 3,
+				color: '#52a8e7',
+				logo: logoTwitter,
+			},
+			{
+				id: 4,
+				color: '#0076b5',
+				logo: logoLinkedin,
+			},
+			{
+				id: 5,
+				color: '#3b5998',
+				logo: logoFacebook,
+			},
+			{
+				id: 6,
+				color: '#6c2498',
+				logo: logoTwitch,
+			},
+			{
+				id: 7,
+				color: '#000000',
+				logo: logoGithub,
+			},
+		]);
 		return {
 			shareSocial,
+			valueArr,
 			logoFacebook,
 			logoYoutube,
 			logoGithub,
