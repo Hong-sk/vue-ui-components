@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@ionic/vue": "^6.4.2",
+    "@ionic/vue-router": "^6.4.2",
     "@rushstack/eslint-patch": "^1.1.4",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
@@ -31,7 +33,10 @@
     "eslint-plugin-storybook": "^0.6.8",
     "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.7.1",
+    "sass": "^1.57.1",
     "vite": "^4.0.0",
-    "vue-loader": "^16.8.3"
+    "vue-ionicons": "^3.0.5",
+    "vue-loader": "^16.8.3",
+    "vue-router": "^4.1.6"
   }
 }
