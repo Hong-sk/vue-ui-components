@@ -4,48 +4,16 @@
 			<ion-icon :icon="shareSocial"></ion-icon>
 		</div>
 
-		<li
-			v-for="value in valueArr"
-			:key="value.id"
-			style="{--i: 'value.id', --clr: 'value.color'}"
-		>
+		<li v-for="value in valueArr" :key="value">
 			<a href="#">
-				<ion-icon :icon="value.logo"></ion-icon>
+				<ion-icon :icon="value"></ion-icon>
 			</a>
 		</li>
-
-		<!-- <li style="--i: 0; --clr: #f70000">
-			<a href="#">
-				<ion-icon :icon="logoYoutube"></ion-icon>
-			</a>
-		</li>
-		<li style="--i: 1; --clr: #e71a21">
-			<a href="#"> <ion-icon :icon="logoPinterest"></ion-icon></a>
-		</li>
-		<li style="--i: 2; --clr: #3bd580">
-			<a href="#"> <ion-icon :icon="logoAndroid"></ion-icon></a>
-		</li>
-		<li style="--i: 3; --clr: #52a8e7">
-			<a href="#"> <ion-icon :icon="logoTwitter"></ion-icon></a>
-		</li>
-		<li style="--i: 4; --clr: #0076b5">
-			<a href="#"> <ion-icon :icon="logoLinkedin"></ion-icon></a>
-		</li>
-		<li style="--i: 5; --clr: #3b5998">
-			<a href="#"> <ion-icon :icon="logoFacebook"></ion-icon></a>
-		</li>
-		<li style="--i: 6; --clr: #6c2498">
-			<a href="#"> <ion-icon :icon="logoTwitch"></ion-icon></a>
-		</li>
-		<li style="--i: 7; --clr: #000000">
-			<a href="#"> <ion-icon :icon="logoGithub"></ion-icon></a>
-		</li> -->
 	</div>
 </template>
 
 <script>
 import { IonIcon } from '@ionic/vue';
-// import SubMenu from './SubMenu.vue';
 import {
 	shareSocial,
 	logoFacebook,
@@ -66,61 +34,33 @@ export default {
 		const menuOpen = () => {
 			menuOpenBool.value = !menuOpenBool.value;
 		};
+		const aa = ref('--i');
+		const bb = ref('--clr');
 		const valueArr = reactive([
-			{
-				id: 0,
-				color: '#f70000',
-				logo: logoYoutube,
-			},
-			{
-				id: 1,
-				color: '#e71a21',
-				logo: logoPinterest,
-			},
-			{
-				id: 2,
-				color: '#3bd580',
-				logo: logoAndroid,
-			},
-			{
-				id: 3,
-				color: '#52a8e7',
-				logo: logoTwitter,
-			},
-			{
-				id: 4,
-				color: '#0076b5',
-				logo: logoLinkedin,
-			},
-			{
-				id: 5,
-				color: '#3b5998',
-				logo: logoFacebook,
-			},
-			{
-				id: 6,
-				color: '#6c2498',
-				logo: logoTwitch,
-			},
-			{
-				id: 7,
-				color: '#000000',
-				logo: logoGithub,
-			},
+			logoYoutube,
+			logoPinterest,
+			logoAndroid,
+			logoTwitter,
+			logoLinkedin,
+			logoFacebook,
+			logoTwitch,
+			logoGithub,
 		]);
 		return {
 			shareSocial,
 			valueArr,
 			logoFacebook,
 			logoYoutube,
+			logoTwitter,
 			logoGithub,
 			logoTwitch,
 			logoLinkedin,
-			logoTwitter,
 			logoAndroid,
 			logoPinterest,
 			menuOpen,
 			menuOpenBool,
+			aa,
+			bb,
 		};
 	},
 };
@@ -200,5 +140,38 @@ body {
 .menu li:hover a {
 	font-size: 2.5em;
 	box-shadow: 0 0 0 2px var(--clr), 0 0 0 6px #fff;
+}
+
+.menu li:nth-child(2) {
+	--i: 0;
+	--clr: #f70000;
+}
+.menu li:nth-child(3) {
+	--i: 1;
+	--clr: #e71a21;
+}
+.menu li:nth-child(4) {
+	--i: 2;
+	--clr: #3bd580;
+}
+.menu li:nth-child(5) {
+	--i: 3;
+	--clr: #52a8e7;
+}
+.menu li:nth-child(6) {
+	--i: 4;
+	--clr: #0076b5;
+}
+.menu li:nth-child(7) {
+	--i: 5;
+	--clr: #3b5998;
+}
+.menu li:nth-child(8) {
+	--i: 6;
+	--clr: #6c2498;
+}
+.menu li:nth-child(9) {
+	--i: 7;
+	--clr: #000000;
 }
 </style>
