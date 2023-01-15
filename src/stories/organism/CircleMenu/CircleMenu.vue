@@ -3,7 +3,6 @@
 		<div class="toggle" @click="menuOpen">
 			<ion-icon :icon="shareSocial"></ion-icon>
 		</div>
-
 		<li v-for="value in valueArr" :key="value">
 			<a href="#">
 				<ion-icon :icon="value"></ion-icon>
@@ -91,7 +90,6 @@ body {
 	position: relative;
 	width: 60px;
 	height: 60px;
-	/* background: #fff; */
 	background: #fff;
 	border-radius: 50%;
 	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
